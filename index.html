@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Techsult Pay</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+  <div class="panel panel-default">
+  <div class="panel-heading"><h3>Buy Your Ticket</h3></div>
+  <div class="panel-body">
+  <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" target="_blank">
+    <input type="hidden" name="public_key" value="FLWPUBK-09105c09975e40e2c6a923dbac3b4d37-X" />
+    <br>
+    Email:<br>
+    <input type="" name="customer[email]" /><br>
+    Phone Number:<br>
+    <input type="" name="customer[phone_number]" /><br>
+    Full Name: <br>
+    <input type="" name="customer[name]" /><br>
+    <input type="hidden" name="tx_ref" value="techsult-shrucoin"/>
+    No of tickets: <br>
+    <input type="" name="quantity" id="quantity"/><br>
+    <label for="currency">Currency:</label><br>
+    <select name="currency" id="currency" onchange="myfun()">
+      <option value="USD">USD</option>
+      <option value="KES">KSH</option>
+    </select><br>
+    Amount:
+    <br><input type="" name="amount" value="10" id="amount" readonly/><br>
+    <input type="hidden" name="meta[token]" />
+    <input type="hidden" name="redirect_url" value="https://shrucoin.com/concert/" />
+    <br>
+    <button type="submit">CHECKOUT</button> 
+  </form>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-4"></div>
+  </div>
+  </div>
+  <script>
+    function myfun(){
+    var costOfTicket;
+    var quantity = document.getElementById("quantity").value;
+    var currency = document.getElementById("currency").value;
+    if(currency == "KES"){
+      costOfTicket = 1000 * quantity;
+    }
+    else if(currency == "USD"){
+      costOfTicket = 10 * quantity;
+    }
+    document.getElementById("amount").value = costOfTicket;
+}
+  </script>
+</body>
+</html>
