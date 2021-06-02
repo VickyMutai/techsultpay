@@ -30,13 +30,15 @@
     <input type="hidden" name="tx_ref" value="techsult-shrucoin"/>
     No of tickets: <br>
     <input type="" name="quantity" id="quantity"/><br>
-    <label for="currency">Currency:</label><br>
+   <br>
     <select name="currency" id="currency" onchange="myfun()">
+      <option value="currency">Choose currency</option>
       <option value="USD">USD</option>
       <option value="KES">KSH</option>
     </select><br>
+    <br>
     Amount:
-    <br><input type="" name="amount" value="10" id="amount" readonly/><br>
+    <br><input type="" name="amount" value="" id="amount" readonly/><br>
     <input type="hidden" name="meta[token]" />
     <input type="hidden" name="redirect_url" value="https://shrucoin.com/concert/" />
     <br>
