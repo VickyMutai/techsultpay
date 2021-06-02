@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo.jpeg" type="image/icon type">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400s&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <title>Techsult Pay</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
@@ -16,15 +19,16 @@
   <div class="col-md-4"></div>
   <div class="col-md-4">
   <div class="panel panel-default">
-  <div class="panel-heading"><h3>Buy Your Ticket</h3></div>
+  <h3>Buy Your Tickets</h3>
+  <p><i>One ticket costs $10</i></p>
   <div class="panel-body">
   <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" target="_blank">
     <input type="hidden" name="public_key" value="FLWPUBK-09105c09975e40e2c6a923dbac3b4d37-X" />
     <br>
     Email:<br>
-    <input type="" name="customer[email]" /><br>
+    <input type="email" name="customer[email]" /><br>
     Phone Number:<br>
-    <input type="" name="customer[phone_number]" /><br>
+    <input type="tel" name="customer[phone_number]" /><br>
     Full Name: <br>
     <input type="" name="customer[name]" /><br>
     <input type="hidden" name="tx_ref" value="techsult-shrucoin"/>
