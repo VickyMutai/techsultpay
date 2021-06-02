@@ -20,7 +20,7 @@
   <div class="col-md-4">
   <div class="panel panel-default">
   <h3>Buy Your Tickets</h3>
-  <p><i>One ticket costs $10</i></p>
+  <p><i><small>One ticket costs $10</small></i></p>
   <div class="panel-body">
   <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" target="_blank">
     <input type="hidden" name="public_key" value="FLWPUBK-09105c09975e40e2c6a923dbac3b4d37-X" />
@@ -39,6 +39,16 @@
       <option value="currency">Choose currency</option>
       <option value="USD">USD</option>
       <option value="KES">KSH</option>
+      <option value="NGN">NGN</option>
+			<option value="GHS">GHS</option>
+			<option value="UGX">UGX</option>
+		 	<option value="ZAR">ZAR</option>
+			<option value="TZS">TZS</option>
+			<option value="ZMW">ZMW</option>
+		 	<option value="RWF">RWF</option>
+		 	<option value="GBP">GBP</option>
+		 	<option value="EUR">EUR</option>
+
     </select><br>
     Amount:
     <br><input type="" name="amount" value="" id="amount" readonly/><br>
@@ -64,6 +74,37 @@
     else if(currency == "USD"){
       costOfTicket = 10 * quantity;
     }
+    else if(currency == "NGN"){
+      costOfTicket = 4000 * quantity;
+    }
+    else if(currency == "GHS"){
+      costOfTicket = 50 * quantity;
+    }
+    else if(currency == "UGX"){
+      costOfTicket = 35460 * quantity;
+    }
+    else if(currency == "ZAR"){
+      costOfTicket = 140 * quantity;
+    }
+    else if(currency == "TZS"){
+      costOfTicket = 23000 * quantity;
+    }
+    else if(currency == "ZMW"){
+      costOfTicket = 220 * quantity;
+    }
+    else if(currency == "RWF"){
+      costOfTicket = 9000 * quantity;
+    }
+    else if(currency == "GBP"){
+      costOfTicket = 0.70 * 10 * quantity;
+    }
+    else if(currency == "EUR"){
+      costOfTicket = 0.82 * 10 * quantity;
+    }
+    else{
+      costOfTicket = "Enter valid currency";
+    }
+
     document.getElementById("amount").value = costOfTicket;
 }
   </script>
