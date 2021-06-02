@@ -29,14 +29,13 @@
     <input type="" name="customer[name]" /><br>
     <input type="hidden" name="tx_ref" value="techsult-shrucoin"/>
     No of tickets: <br>
-    <input type="" name="quantity" id="quantity"/><br>
+    <input type="number" name="quantity" id="quantity" min="1" max="10"/><br>
    <br>
     <select name="currency" id="currency" onchange="myfun()">
       <option value="currency">Choose currency</option>
       <option value="USD">USD</option>
       <option value="KES">KSH</option>
     </select><br>
-    <br>
     Amount:
     <br><input type="" name="amount" value="" id="amount" readonly/><br>
     <input type="hidden" name="meta[token]" />
